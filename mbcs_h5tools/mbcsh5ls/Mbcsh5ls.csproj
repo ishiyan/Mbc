@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Configurations>Debug_md;Release_md</Configurations>
+    <Platforms>x64</Platforms>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishReadyToRun>true</PublishReadyToRun>
+    <PublishSingleFile>false</PublishSingleFile>
+    <ApplicationIcon>..\shared\h5v.ico</ApplicationIcon>
+    <LangVersion>Latest</LangVersion>
+    <AssemblyName>Mbcsh5ls</AssemblyName>
+    <Description>Mbrane mbcs hdf5 list utility</Description>
+    <Authors>Mbrane</Authors>
+    <Company>Mbrane</Company>
+    <copyright>Copyright (c) 2020 Mbrane. All rights reserved.</copyright>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.0.1</Version>
+    <Product>Mbrane mbcs hdf5 tools</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'!='true'">
+    <ProjectReference Include="..\..\mbcdll\mbcdll.vcxproj">
+      <Project>{AD2A86D5-1165-40B4-A1CC-6DFEDFF2C16D}</Project>
+      <Name>mbcdll</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <OutputItemType>Content</OutputItemType>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\mbcs\Mbcs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="bin_gcc_glibc\**" />
+    <Content Remove="bin_gcc_musl\**" />
+    <Content Remove="bin_msvc\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Mbcsh5ls.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

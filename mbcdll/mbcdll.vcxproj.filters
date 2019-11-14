@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\crtDebug.cpp" />
+    <ClCompile Include="src\h5capi.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\visibility.h" />
+    <ClInclude Include="include\crtDebug.h" />
+    <ClInclude Include="include\h5capi.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="mbcdll.rc" />
+  </ItemGroup>
+</Project>

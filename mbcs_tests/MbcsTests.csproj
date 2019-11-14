@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <LangVersion>8</LangVersion>
+    <Configurations>Debug_md;Release_md</Configurations>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.4.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="coverlet.collector" Version="1.0.1" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug_md'">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release_md'">
+    <DefineConstants>RELEASE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'!='true'">
+    <ProjectReference Include="..\mbcdll\mbcdll.vcxproj">
+      <Project>{AD2A86D5-1165-40B4-A1CC-6DFEDFF2C16D}</Project>
+      <Name>mbcdll</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <OutputItemType>Content</OutputItemType>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\mbcs\Mbcs.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <PropertyGroup>
+      <LocalizationDirectories>$(OutDir)ar;$(OutDir)cs;$(OutDir)da;$(OutDir)de;$(OutDir)es;$(OutDir)fa;$(OutDir)fi;$(OutDir)fr;$(OutDir)he;$(OutDir)hi;$(OutDir)it;$(OutDir)ja;$(OutDir)ko;$(OutDir)mk;$(OutDir)nl;$(OutDir)pl;$(OutDir)pt;$(OutDir)pt-BR;$(OutDir)ru;$(OutDir)sv;$(OutDir)tr;$(OutDir)tr-TR;$(OutDir)zh-CN;$(OutDir)zh-Hans;$(OutDir)zh-Hant</LocalizationDirectories>
+    </PropertyGroup>
+    <RemoveDir Directories="$(LocalizationDirectories)" />
+  </Target>
+
+</Project>

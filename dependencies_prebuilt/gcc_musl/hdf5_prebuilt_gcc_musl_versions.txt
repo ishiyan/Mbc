@@ -1,0 +1,19 @@
+This version was pre-built with the following versions:
+-------------------------------------------------------
+The system is: Alpine linux 3.10.3 x64 (WSL)
+
+gcc/g++ (Alpine 9.2.0) 9.2.0, 86_64-alpine-linux-musl/9.2.0
+
+no -flto was used because gcc linker gives errors while linking release executables.
+CXXFLAGS_RELEASE=-m64 -Wall -pedantic -std=c++17 -fvisibility=hidden -fPIC -O3 -frename-registers -funroll-loops
+CXXFLAGS_DEBUG  =-m64 -Wall -pedantic -std=c++17 -fvisibility=hidden -fPIC -O0 -g3
+
+
+CMake: 3.15.3
+SZip:  2.1.1
+ZLib:  1.2.11
+HDF5:  1.10.5
+
+Build source directory (for debugging):
+---------------------------------------
+/mnt/C/mBrane/Hdf5/hdf5-1.10.5

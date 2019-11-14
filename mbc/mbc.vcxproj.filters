@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="time">
+      <UniqueIdentifier>{1147f233-6609-49d7-9c47-ecf63b8e94fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h5">
+      <UniqueIdentifier>{94310815-368f-4231-b2d5-10f3c392ffbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="numerics">
+      <UniqueIdentifier>{9a4e1ae0-62ac-4651-881b-802d548b6341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="testharness">
+      <UniqueIdentifier>{8147f233-6809-49d7-9c47-8cf63b8e94fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="numerics\random">
+      <UniqueIdentifier>{9790a628-b300-4e20-baae-4ff2d3af8e8f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\mbc\config.h" />
+    <ClInclude Include="include\mbc\time\dotNetTicks.h">
+      <Filter>time</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mbc\numerics\random\randomGenerator.h">
+      <Filter>numerics\random</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mbc\numerics\random\well.h">
+      <Filter>numerics\random</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mbc\numerics\random\mersenneTwisterSfmt.h">
+      <Filter>numerics\random</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mbc\testharness.h">
+      <Filter>testharness</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mbc\testharness_shell.h">
+      <Filter>testharness</Filter>
+    </ClInclude>
+    <ClInclude Include="include\mbc\trading\data\entities.h" />
+    <ClInclude Include="include\mbc\trading\markets\exchange.h" />
+    <ClInclude Include="include\mbc\trading\instruments\instrument.h" />
+    <ClInclude Include="include\mbc\trading\trading.h" />
+    <ClInclude Include="include\mbc\trading\currencies\currencyCode.h" />
+    <ClInclude Include="include\mbc\h5.h">
+      <Filter>h5</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\trading\markets\exchange.cpp" />
+    <ClCompile Include="src\h5.cpp">
+      <Filter>h5</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

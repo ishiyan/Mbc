@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Mbhv" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <ObjectDataProvider x:Key="colors" ObjectType="{x:Type local:ColorHelper}" MethodName="GetColorNames"/>
+    <ObjectDataProvider x:Key="coloredPens" ObjectType="{x:Type local:ColoredPenHelper}" MethodName="GetColoredPens"/>
+    <ObjectDataProvider x:Key="fontStretches" ObjectType="{x:Type local:FontStretchHelper}" MethodName="GetFontStretchNames"/>
+    <ObjectDataProvider x:Key="fontStyles" ObjectType="{x:Type local:FontStyleHelper}" MethodName="GetFontStyleNames"/>
+    <ObjectDataProvider x:Key="fontWeights" ObjectType="{x:Type local:FontWeightHelper}" MethodName="GetFontWeightNames"/>
+
+    <CollectionViewSource x:Key="fonts" Source="{Binding Source={x:Static Fonts.SystemFontFamilies}}"/>
+
+    <Style x:Key="penComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="True" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Line X1="0" X2="36" Y1="4" Y2="4" Height="8" Stroke="{Binding Path=Brush}" StrokeThickness="{Binding Path=Thickness}" StrokeDashCap="{Binding Path=DashCap}" StrokeDashOffset="{Binding Path=DashStyle.Offset}" StrokeDashArray="{Binding Path=DashStyle.Dashes}" Margin="2" HorizontalAlignment="Left" VerticalAlignment="Top" SnapsToDevicePixels="False" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="brushComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="True" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Rectangle Fill="{Binding}" Stroke="{x:Null}" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="16" Width="36"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="fontFamilyComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="ItemsSource" Value="{Binding Source={StaticResource fonts}}" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="False" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontFamily="{Binding}" Margin="2"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="fontStyleComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="ItemsSource" Value="{Binding Source={StaticResource fontStyles}}" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="False" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontFamily="Arial" FontStyle="{Binding}" Margin="2"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="fontStretchComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="ItemsSource" Value="{Binding Source={StaticResource fontStretches}}" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="False" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontFamily="Arial" FontStretch="{Binding}" Margin="2"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="fontWeightComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="ItemsSource" Value="{Binding Source={StaticResource fontWeights}}" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="False" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontFamily="Arial" FontWeight="{Binding}" Margin="2"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="colorComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="ItemsSource" Value="{Binding Source={StaticResource colors}}" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="False" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Rectangle Fill="{Binding}" Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="16" Width="32"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="colorNameComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="ItemsSource" Value="{Binding Source={StaticResource colors}}" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="False" />
+        <Setter Property="ComboBox.ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Margin="1" Orientation="Horizontal">
+                        <Rectangle Fill="{Binding}" Margin="0" Height="16" Width="16"/>
+                        <TextBlock Text="{Binding}" Margin="2 0 0 0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="textComboBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="SelectedIndex" Value="0" />
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="True" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,15 @@
+This version was pre-built with the following versions:
+-------------------------------------------------------
+The system is: Windows - 10.0.17134 - AMD64
+Visual Studio 2019
+Microsoft (R) C/C++ Optimizing Compiler Version 19.22.27905 for x64
+Microsoft (R) Incremental Linker Version 14.22.27905.0
+
+CMake: cmake-3.14.6-win64-x64
+SZip:  2.1.1
+ZLib:  1.2.11
+HDF5:  1.10.5
+
+Build source directory (for debugging):
+---------------------------------------
+C:\mBrane\Hdf5\hdf5-1.10.5

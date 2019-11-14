@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Configurations>Debug_md;Release_md</Configurations>
+    <Platforms>x64</Platforms>
+    <LangVersion>8</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Mbcs</AssemblyName>
+    <Description>Mbcs library</Description>
+    <Authors>Mbrane</Authors>
+    <Company>Mbrane</Company>
+    <copyright>Copyright (c) 2020 Mbrane. All rights reserved.</copyright>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.0.1</Version>
+    <Product>Mbrane mbcs library</Product>
+    <NuspecFile>Mbcs.nuspec</NuspecFile>
+    <PackageIcon>mb.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug_md'">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release_md'">
+    <DefineConstants>RELEASE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'!='true' AND '$(Compiler)'!='gcc'">
+    <ProjectReference Include="..\mbcdll\mbcdll.vcxproj">
+      <Project>{AD2A86D5-1165-40B4-A1CC-6DFEDFF2C16D}</Project>
+      <Name>mbcdll</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <OutputItemType>Content</OutputItemType>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'=='true' AND '$(Compiler)'!='gcc' AND '$(Configuration)'=='Debug_md'">
+    <Content Include="$(ProjectDir)..\mbcdll\bin_msvc\mbcd.dll">
+      <Link>mbcd.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <!-- Content Include="$(ProjectDir)..\mbcdll\bin_msvc\mbcd.pdb">
+      <Link>mbcd.pdb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content -->
+  </ItemGroup>
+  <ItemGroup Condition="'$(NoDependencies)'=='true' AND '$(Compiler)'!='gcc' AND '$(Configuration)'=='Release_md'">
+    <Content Include="$(ProjectDir)..\mbcdll\bin_msvc\mbc.dll">
+      <Link>mbc.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'=='true' AND '$(Compiler)'=='gcc' AND '$(GccLibType)'=='glibc' AND '$(Configuration)'=='Debug_md'">
+    <Content Include="$(ProjectDir)..\mbcdll\bin_gcc_glibc\mbcd.so">
+      <Link>mbcd.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(NoDependencies)'=='true' AND '$(Compiler)'=='gcc' AND '$(GccLibType)'=='glibc' AND '$(Configuration)'=='Release_md'">
+    <Content Include="$(ProjectDir)..\mbcdll\bin_gcc_glibc\mbc.so">
+      <Link>mbc.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'=='true' AND '$(Compiler)'=='gcc' AND '$(GccLibType)'=='musl' AND '$(Configuration)'=='Debug_md'">
+    <Content Include="$(ProjectDir)..\mbcdll\bin_gcc_musl\mbcd.so">
+      <Link>mbcd.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(NoDependencies)'=='true' AND '$(Compiler)'=='gcc' AND '$(GccLibType)'=='musl' AND '$(Configuration)'=='Release_md'">
+    <Content Include="$(ProjectDir)..\mbcdll\bin_gcc_musl\mbc.so">
+      <Link>mbc.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

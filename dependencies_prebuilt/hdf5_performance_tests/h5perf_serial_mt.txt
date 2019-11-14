@@ -1,0 +1,81 @@
+HDF5 Library: Version 1.xx.yyy
+==== Parameters ====
+IO API=posix hdf5 
+Number of iterations=1
+Dataset size=100 200 
+Transfer buffer size=10 20 
+Dimension access order=1 2 
+HDF5 data storage method=Contiguous
+HDF5 file driver=sec2
+Env HDF5_PREFIX=not set
+==== End of Parameters ====
+                                                                                                                                                   (gcc-8.3.0 static, ubuntu 18.4 WSL)             (musl gcc-9.2.0 static, Alpine 3.10.3 WSL)   (gcc-9.2.1 static, ubuntu 18.4 WSL)
+Transfer Buffer Size (bytes): 200
+File Size(MB): 0.02                   1.9.234                                       1.9.235                                         1.10.5                                       1.10.5                                          1.10.5                                       1.10.5
+        IO API = POSIX                                IO API = POSIX                                  IO API = POSIX                               IO API = POSIX                                  IO API = POSIX                               IO API = POSIX                          
+            Write (1 iteration(s)):                       Write (1 iteration(s)):                         Write (1 iteration(s)):                      Write (1 iteration(s)):                         Write (1 iteration(s)):                      Write (1 iteration(s)):             
+                Maximum Throughput:   3.82 MB/s               Maximum Throughput:   6.36 MB/s                 Maximum Throughput:   6.36 MB/s              Maximum Throughput:   1.27 MB/s                 Maximum Throughput:   2.10 MB/s              Maximum Throughput:   2.13 MB/s 
+                Average Throughput:   3.82 MB/s               Average Throughput:   6.36 MB/s                 Average Throughput:   6.36 MB/s              Average Throughput:   1.27 MB/s                 Average Throughput:   2.10 MB/s              Average Throughput:   2.13 MB/s 
+                Minimum Throughput:   3.82 MB/s               Minimum Throughput:   6.36 MB/s                 Minimum Throughput:   6.36 MB/s              Minimum Throughput:   1.27 MB/s                 Minimum Throughput:   2.10 MB/s              Minimum Throughput:   2.13 MB/s 
+            Write Open-Close (1 iteration(s)):            Write Open-Close (1 iteration(s)):              Write Open-Close (1 iteration(s)):           Write Open-Close (1 iteration(s)):              Write Open-Close (1 iteration(s)):           Write Open-Close (1 iteration(s)):  
+                Maximum Throughput:   2.12 MB/s               Maximum Throughput:   2.73 MB/s                 Maximum Throughput:   2.12 MB/s              Maximum Throughput:   0.86 MB/s                 Maximum Throughput:   1.86 MB/s              Maximum Throughput:   1.83 MB/s 
+                Average Throughput:   2.12 MB/s               Average Throughput:   2.73 MB/s                 Average Throughput:   2.12 MB/s              Average Throughput:   0.86 MB/s                 Average Throughput:   1.86 MB/s              Average Throughput:   1.83 MB/s 
+                Minimum Throughput:   2.12 MB/s               Minimum Throughput:   2.73 MB/s                 Minimum Throughput:   2.12 MB/s              Minimum Throughput:   0.86 MB/s                 Minimum Throughput:   1.86 MB/s              Minimum Throughput:   1.83 MB/s 
+            Read (1 iteration(s)):                        Read (1 iteration(s)):                          Read (1 iteration(s)):                       Read (1 iteration(s)):                          Read (1 iteration(s)):                       Read (1 iteration(s)):              
+                Maximum Throughput:   9.54 MB/s               Maximum Throughput:   6.36 MB/s                 Maximum Throughput:   9.55 MB/s              Maximum Throughput:   1.92 MB/s                 Maximum Throughput:   2.60 MB/s              Maximum Throughput:   2.51 MB/s 
+                Average Throughput:   9.54 MB/s               Average Throughput:   6.36 MB/s                 Average Throughput:   9.55 MB/s              Average Throughput:   1.92 MB/s                 Average Throughput:   2.60 MB/s              Average Throughput:   2.51 MB/s 
+                Minimum Throughput:   9.54 MB/s               Minimum Throughput:   6.36 MB/s                 Minimum Throughput:   9.55 MB/s              Minimum Throughput:   1.92 MB/s                 Minimum Throughput:   2.60 MB/s              Minimum Throughput:   2.51 MB/s 
+            Read Open-Close (1 iteration(s)):             Read Open-Close (1 iteration(s)):               Read Open-Close (1 iteration(s)):            Read Open-Close (1 iteration(s)):               Read Open-Close (1 iteration(s)):            Read Open-Close (1 iteration(s)):   
+                Maximum Throughput:   9.54 MB/s               Maximum Throughput:   6.36 MB/s                 Maximum Throughput:   9.55 MB/s              Maximum Throughput:   1.86 MB/s                 Maximum Throughput:   2.54 MB/s              Maximum Throughput:   2.45 MB/s 
+                Average Throughput:   9.54 MB/s               Average Throughput:   6.36 MB/s                 Average Throughput:   9.55 MB/s              Average Throughput:   1.86 MB/s                 Average Throughput:   2.54 MB/s              Average Throughput:   2.45 MB/s 
+                Minimum Throughput:   9.54 MB/s               Minimum Throughput:   6.36 MB/s                 Minimum Throughput:   9.55 MB/s              Minimum Throughput:   1.86 MB/s                 Minimum Throughput:   2.54 MB/s              Minimum Throughput:   2.45 MB/s 
+        IO API = HDF5                                 IO API = HDF5                                   IO API = HDF5                                IO API = HDF5                                   IO API = HDF5                                IO API = HDF5                           
+            Write (1 iteration(s)):                       Write (1 iteration(s)):                         Write (1 iteration(s)):                      Write (1 iteration(s)):                         Write (1 iteration(s)):                      Write (1 iteration(s)):             
+                Maximum Throughput:  19.09 MB/s               Maximum Throughput:   9.55 MB/s                 Maximum Throughput:  19.07 MB/s              Maximum Throughput:   3.15 MB/s                 Maximum Throughput:  16.46 MB/s              Maximum Throughput:  27.16 MB/s 
+                Average Throughput:  19.09 MB/s               Average Throughput:   9.55 MB/s                 Average Throughput:  19.07 MB/s              Average Throughput:   3.15 MB/s                 Average Throughput:  16.46 MB/s              Average Throughput:  27.16 MB/s 
+                Minimum Throughput:  19.09 MB/s               Minimum Throughput:   9.55 MB/s                 Minimum Throughput:  19.07 MB/s              Minimum Throughput:   3.15 MB/s                 Minimum Throughput:  16.46 MB/s              Minimum Throughput:  27.16 MB/s 
+            Write Open-Close (1 iteration(s)):            Write Open-Close (1 iteration(s)):              Write Open-Close (1 iteration(s)):           Write Open-Close (1 iteration(s)):              Write Open-Close (1 iteration(s)):           Write Open-Close (1 iteration(s)):  
+                Maximum Throughput:   4.77 MB/s               Maximum Throughput:   3.82 MB/s                 Maximum Throughput:   4.77 MB/s              Maximum Throughput:   0.82 MB/s                 Maximum Throughput:   4.86 MB/s              Maximum Throughput:   5.45 MB/s 
+                Average Throughput:   4.77 MB/s               Average Throughput:   3.82 MB/s                 Average Throughput:   4.77 MB/s              Average Throughput:   0.82 MB/s                 Average Throughput:   4.86 MB/s              Average Throughput:   5.45 MB/s 
+                Minimum Throughput:   4.77 MB/s               Minimum Throughput:   3.82 MB/s                 Minimum Throughput:   4.77 MB/s              Minimum Throughput:   0.82 MB/s                 Minimum Throughput:   4.86 MB/s              Minimum Throughput:   5.45 MB/s 
+            Read (1 iteration(s)):                        Read (1 iteration(s)):                          Read (1 iteration(s)):                       Read (1 iteration(s)):                          Read (1 iteration(s)):                       Read (1 iteration(s)):              
+                Maximum Throughput:  19.13 MB/s               Maximum Throughput:  19.07 MB/s                 Maximum Throughput:   0.00 MB/s              Maximum Throughput:  51.15 MB/s                 Maximum Throughput:  64.20 MB/s              Maximum Throughput:  76.92 MB/s 
+                Average Throughput:  19.13 MB/s               Average Throughput:  19.07 MB/s                 Average Throughput:   0.00 MB/s              Average Throughput:  51.15 MB/s                 Average Throughput:  64.20 MB/s              Average Throughput:  76.92 MB/s 
+                Minimum Throughput:  19.13 MB/s               Minimum Throughput:  19.07 MB/s                 Minimum Throughput:   0.00 MB/s              Minimum Throughput:  51.15 MB/s                 Minimum Throughput:  64.20 MB/s              Minimum Throughput:  76.92 MB/s 
+            Read Open-Close (1 iteration(s)):             Read Open-Close (1 iteration(s)):               Read Open-Close (1 iteration(s)):            Read Open-Close (1 iteration(s)):               Read Open-Close (1 iteration(s)):            Read Open-Close (1 iteration(s)):   
+                Maximum Throughput:  19.13 MB/s               Maximum Throughput:  19.07 MB/s                 Maximum Throughput:  19.05 MB/s              Maximum Throughput:   9.50 MB/s                 Maximum Throughput:  11.90 MB/s              Maximum Throughput:  11.87 MB/s 
+                Average Throughput:  19.13 MB/s               Average Throughput:  19.07 MB/s                 Average Throughput:  19.05 MB/s              Average Throughput:   9.50 MB/s                 Average Throughput:  11.90 MB/s              Average Throughput:  11.87 MB/s 
+                Minimum Throughput:  19.13 MB/s               Minimum Throughput:  19.07 MB/s                 Minimum Throughput:  19.05 MB/s              Minimum Throughput:   9.50 MB/s                 Minimum Throughput:  11.90 MB/s              Minimum Throughput:  11.87 MB/s 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

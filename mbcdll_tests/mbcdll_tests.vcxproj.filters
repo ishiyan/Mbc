@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="h5 capi">
+      <UniqueIdentifier>{3858cb23-bcb7-4276-9b83-b169a73e5f61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbcdll_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mbcdll\h5capi\h5capiTestInfo.h">
+      <Filter>h5 capi</Filter>
+    </ClInclude>
+    <ClCompile Include="mbcdll\h5capi\h5capiTestInfo.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.Common.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.File.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.Instrument.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.Data.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.OhlcvData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.OhlcvPriceOnlyData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.QuoteData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.QuotePriceOnlyData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.ScalarData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.TradeData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+    <ClCompile Include="mbcdll\h5capi\h5capiTests.TradePriceOnlyData.cpp">
+      <Filter>h5 capi</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

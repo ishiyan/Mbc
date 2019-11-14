@@ -1,0 +1,17 @@
+This version was pre-built with the following versions:
+-------------------------------------------------------
+The system is: Ubuntu 18.04.1 x64 (WSL)
+
+gcc (Ubuntu 9.2.1-9ubuntu2~18.04.1) 9.2.1 20191008
+
+CXXFLAGS_RELEASE=-m64 -Wall -pedantic -std=c++17 -fvisibility=hidden -fPIC -O3 -flto -frename-registers -funroll-loops
+CXXFLAGS_DEBUG  =-m64 -Wall -pedantic -std=c++17 -fvisibility=hidden -fPIC -O0 -flto -g3
+
+CMake: cmake-3.10,2
+SZip:  2.1.1
+ZLib:  1.2.11
+HDF5:  1.10.5
+
+Build source directory (for debugging):
+---------------------------------------
+/mnt/C/mBrane/Hdf5/hdf5-1.10.5

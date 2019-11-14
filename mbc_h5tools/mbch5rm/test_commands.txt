@@ -1,0 +1,4 @@
+days c:\mbmr2\test AEX.h5 .*/T____ 20120605 1
+objects c:\mbmr2\test\ebf.h5 /EUREPO.*M 
+objects c:\mbmr2\test\ebf.h5 /EONIASWAP.?M
+objects c:\mbmr2\test\ebf.h5 /EONIASWAP.*M

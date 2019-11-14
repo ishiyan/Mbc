@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release_mt|x64">
+      <Configuration>Release_mt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_md|x64">
+      <Configuration>Release_md</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_mt|x64">
+      <Configuration>Debug_mt</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug_md|x64">
+      <Configuration>Debug_md</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{008D1CEC-1586-4C89-B524-DF15D960516A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mbc_tests</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_mt|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_md|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_mt|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_md|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_mt|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_md|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_mt|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_md|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_mt|x64'">
+    <TargetName>mbc_tests_mt</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)bin_msvc\</OutDir>
+    <IntDir>$(ProjectDir)obj_msvc\mt\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\mbc\include\;$(ProjectDir)..\mbc\include\mbc\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_hdf5\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_zlib\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_szip\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\mbc\lib_msvc\;$(ProjectDir)..\dependencies_prebuilt\msvc\lib\;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_md|x64'">
+    <TargetName>mbc_tests_md</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)bin_msvc\</OutDir>
+    <IntDir>$(ProjectDir)obj_msvc\md\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\mbc\include\;$(ProjectDir)..\mbc\include\mbc\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_hdf5\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_zlib\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_szip\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\mbc\lib_msvc\;$(ProjectDir)..\dependencies_prebuilt\msvc\lib\;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_mt|x64'">
+    <TargetName>mbc_tests_mtd</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)bin_msvc\</OutDir>
+    <IntDir>$(ProjectDir)obj_msvc\mtd\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\mbc\include\;$(ProjectDir)..\mbc\include\mbc\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_hdf5\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_zlib\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_szip\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\mbc\lib_msvc\;$(ProjectDir)..\dependencies_prebuilt\msvc\lib\;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_md|x64'">
+    <TargetName>mbc_test_mdd</TargetName>
+    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)bin_msvc\</OutDir>
+    <IntDir>$(ProjectDir)obj_msvc\mdd\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\mbc\include\;$(ProjectDir)..\mbc\include\mbc\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_hdf5\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_zlib\;$(ProjectDir)..\dependencies_prebuilt\msvc\include_szip\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\mbc\lib_msvc\;$(ProjectDir)..\dependencies_prebuilt\msvc\lib\;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>NativeMinimumRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_mt|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>_CONSOLE;WIN64;_WIN64;X64;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmbcmt.lib;libhdf5mt.lib;libzlibmt.lib;libszipmt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+      <LargeAddressAware>true</LargeAddressAware>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <SetChecksum>true</SetChecksum>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>false</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_md|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <PreprocessorDefinitions>_CONSOLE;WIN64;_WIN64;X64;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <SDLCheck>false</SDLCheck>
+      <OmitFramePointers>true</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmbcmd.lib;libhdf5md.lib;libzlibmd.lib;libszipmd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+      <LargeAddressAware>true</LargeAddressAware>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>false</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_mt|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;WIN64;_WIN64;X64;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <SDLCheck>true</SDLCheck>
+      <OmitFramePointers>false</OmitFramePointers>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmbcmtd.lib;libhdf5mtd.lib;libzlibmtd.lib;libszipmtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <SetChecksum>true</SetChecksum>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>false</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_md|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CONSOLE;WIN64;_WIN64;X64;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <SDLCheck>true</SDLCheck>
+      <OmitFramePointers>false</OmitFramePointers>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libmbcmdd.lib;libhdf5mdd.lib;libzlibmdd.lib;libszipmdd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX64</TargetMachine>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>false</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="mbc\numerics\random\mersenneTwisterSfmtTests.h" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests216091.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests132049.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests86243.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests44497.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests19937.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests11213.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests4253.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests2281.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests1279.cpp" />
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests607.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mbc\h5\h5Tests.Common.h" />
+    <ClCompile Include="mbc\h5\h5Tests.Common.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.Data.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.File.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.Instrument.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvData.Exploratory.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvPriceOnlyData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvPriceOnlyData.Exploratory.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.QuoteData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.QuoteData.Exploratory.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.QuotePriceOnlyData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.QuotePriceOnlyData.Exploratory.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.ScalarData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.ScalarData.Exploratory.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.TradeData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.TradeData.Exploratory.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.TradePriceOnlyData.cpp" />
+    <ClCompile Include="mbc\h5\h5Tests.TradePriceOnlyData.Exploratory.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbc\time\dotNetTicksTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbc\testharnessTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbc\trading\data\entitiesTests.cpp" />
+    <ClCompile Include="mbc\trading\markets\exchangeTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbc_tests.cpp" />
+    <ClCompile Include="crtDebug.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mbc\mbc.vcxproj">
+      <Project>{2E72615A-2BB2-4689-8E53-56159E28B79A}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

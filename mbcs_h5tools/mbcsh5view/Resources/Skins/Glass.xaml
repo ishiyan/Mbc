@@ -1,0 +1,220 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Mbhv">
+
+        <SolidColorBrush Color="Transparent" x:Key="{x:Static SystemColors.WindowBrushKey}"/>
+        <SolidColorBrush Color="Transparent" x:Key="{x:Static SystemColors.ControlBrushKey}"/>
+        <DropShadowEffect x:Key="glowWhite" ShadowDepth="0" Color="White" BlurRadius="256" />
+
+        <Style x:Key="mainGridStyle" TargetType="{x:Type Grid}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Effect" Value="{StaticResource glowWhite}"/>
+        </Style>
+
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{x:Static SystemColors.ControlTextBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,1,1" />
+        </Style>
+
+        <Style TargetType="{x:Type DataGridRowHeader}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="1,0,0,0" />
+            <Setter Property="BorderBrush" Value="{x:Static SystemColors.ControlTextBrush}" />
+        </Style>
+
+        <Style x:Key="stackPanelStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="buttonStackPanelStyle" TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Width" Value="24" />
+        </Style>
+
+        <Style x:Key="contentViewToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+            <Style.Resources>
+                <Path Margin="2" x:Key="pathList" Fill="{x:Static SystemColors.ControlTextBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  Data="M0,0H10V2H0ZM0,4H10V6H0ZM0,8H10V10H0Z" />
+                <Path Margin="2" x:Key="pathTree" Fill="{x:Static SystemColors.ControlTextBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                  Data="M0,0H10V2H0ZM3,2V6H10V4H5V2ZM6,6V10H10V8H8V6Z" />
+            </Style.Resources>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="IsThreeState" Value="False" />
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Content" Value="{StaticResource pathList}"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="False">
+                    <Setter Property="Content" Value="{StaticResource pathTree}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="listItemStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="Transparent" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=IsDataset}" Value="False">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Foreground" Value="#ffffff"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=IsParsed}" Value="False">
+                    <Setter Property="FontStyle" Value="Italic"/>
+                    <Setter Property="TextDecorations" Value="Strikethrough"/>
+                    <Setter Property="Foreground" Value="#ff0000"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <DataTemplate x:Key="listItemTemplate">
+            <TextBlock Text="{Binding Path=Path}" Style="{StaticResource listItemStyle}"/>
+        </DataTemplate>
+
+        <Style x:Key="listBoxStyle" TargetType="ListBox" >
+            <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True" />
+            <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="True"/>
+            <!-- Setter Property="Height" Value="Auto" / -->
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="AlternationCount" Value="1"/>
+            <Setter Property="ClipToBounds" Value="True"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Effect" Value="{StaticResource glowWhite}"/>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <StaticResource ResourceKey="listItemTemplate"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TreeViewItem">
+            <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}" />
+            <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+        </Style>
+
+        <Style x:Key="treeItemStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="Transparent" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=IsDataset}" Value="False">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=IsParsed}" Value="False">
+                    <Setter Property="FontStyle" Value="Italic"/>
+                    <Setter Property="TextDecorations" Value="Strikethrough"/>
+                    <Setter Property="Foreground" Value="#ff0000"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <HierarchicalDataTemplate ItemsSource="{Binding Items}" x:Key="treeItemTemplate">
+            <TextBlock Text="{Binding Path=Label}" Style="{StaticResource treeItemStyle}"/>
+        </HierarchicalDataTemplate>
+
+        <Style x:Key="treeViewStyle" TargetType="{x:Type TreeView}">
+            <Setter Property="VirtualizingStackPanel.IsVirtualizing" Value="True" />
+            <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Recycling" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="True"/>
+            <!-- Setter Property="Height" Value="Auto" / -->
+            <Setter Property="ClipToBounds" Value="True"/>
+            <Setter Property="AlternationCount" Value="2"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Effect" Value="{StaticResource glowWhite}"/>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <StaticResource ResourceKey="treeItemTemplate"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="dataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Margin" Value="1,0,0,0" />
+            <!-- Setter Property="Background" Value="Black" />
+            <Setter Property="RowBackground" Value="LawnGreen" />
+            <Setter Property="AlternatingRowBackground" Value="YellowGreen" />
+            <Setter Property="AlternationCount" Value="2" />
+            <Setter Property="HorizontalGridLinesBrush" Value="Yellow" />
+            <Setter Property="VerticalGridLinesBrush" Value="Orange" />
+            <Setter Property="BorderBrush" Value="Red" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Foreground" Value="Blue" / -->
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Effect" Value="{StaticResource glowWhite}"/>
+        </Style>
+
+        <Style x:Key="fileSizeTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="4,0,0,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="sampleCountTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="contentTextBlockStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Margin" Value="4,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="stepRepeatButtonStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="stepToggleRadioButtonStyle" TargetType="{x:Type RadioButton}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="IsThreeState" Value="False" />
+            <Setter Property="GroupName" Value="step" />
+        </Style>
+
+        <Style x:Key="pushButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style x:Key="traceTextBoxControlStyle" TargetType="{x:Type local:TraceTextBoxControl}">
+        </Style>
+
+        <Style x:Key="lightboxBorderStyle" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="#90000000" />
+        </Style>
+        <Style x:Key="lightboxDialogBorderStyle" TargetType="{x:Type Border}">
+            <Setter Property="Background" Value="AliceBlue" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="CornerRadius" Value="10,0,10,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="BitmapEffect">
+                <Setter.Value>
+                    <DropShadowBitmapEffect Color="Black" Opacity="0.5" Direction="270" ShadowDepth="0.7" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="lightboxButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="2" />
+        </Style>
+        <Style x:Key="lightboxTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="lightboxTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="lightboxCheckBoxStyle" TargetType="{x:Type CheckBox}">
+            <Setter Property="IsThreeState" Value="False" />
+        </Style>
+        <Style x:Key="lightboxProgressBarStyle" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Height" Value="20" />
+        </Style>
+
+        <local:RowNumberConverter x:Key="rowNumberConverter" />
+
+</ResourceDictionary>

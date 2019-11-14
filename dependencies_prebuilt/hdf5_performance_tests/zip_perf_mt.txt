@@ -1,0 +1,90 @@
+Filesize: 67108864
+Compression Level: 6
+
+    1.9.234                                            1.9.235                                           1.10.5 (win10)                                           1.10.5 (gcc-8.3.0 static, ubuntu 18.4 WSL)                       1.10.5 (musl gcc-9.2.0 static Alpine 3.18.3 WSL)      1.10.5 (gcc-9.2.1 static, ubuntu 18.4 WSL)
+
+Buffer size == 128KB                                   Buffer size == 128KB                              Buffer size == 128KB                                     Buffer size == 128KB                                             Buffer size == 128KB                                   Buffer size == 128KB                               
+	Uncompressed Write Time: 0.03s                     	Uncompressed Write Time: 0.03s                   	Uncompressed Write Time: 0.04s                           Uncompressed Write Time: 0.05s                    	Uncompressed Write Time: 0.04s                    	Uncompressed Write Time: 0.04s             
+	Uncompressed Write Throughput: 2208.13MB/s         	Uncompressed Write Throughput: 2371.97MB/s       	Uncompressed Write Throughput: 1453.00MB/s               Uncompressed Write Throughput: 1390.10MB/s        	Uncompressed Write Throughput: 1928.82MB/s        	Uncompressed Write Throughput: 1513.65MB/s 
+	Compression Ratio: 0.00113678                      	Compression Ratio: 0.00113678                    	Compression Ratio: 0.00113678                            Compression Ratio: 0.00113678                     	Compression Ratio: 0.00113678                     	Compression Ratio: 0.00113678              
+	Compressed Write Time: 1.47s                       	Compressed Write Time: 1.47s                     	Compressed Write Time: 1.49s                             Compressed Write Time: 1.14s                      	Compressed Write Time: 0.56s                      	Compressed Write Time: 0.59s               
+	Compressed Write Throughput: 43.63MB/s             	Compressed Write Throughput: 43.65MB/s           	Compressed Write Throughput: 42.95MB/s                   Compressed Write Throughput: 56.28MB/s            	Compressed Write Throughput: 113.04MB/s           	Compressed Write Throughput: 108.13MB/s    
+	Compression Time: 1.35716s                         	Compression Time: 1.36116s                       	Compression Time: 1.37714s                               Compression Time: 0.882406s                       	Compression Time: 0.555626s                       	Compression Time: 0.538412s                
+Buffer size == 256KB                                   Buffer size == 256KB                              Buffer size == 256KB                                            Buffer size == 256KB                                      Buffer size == 256KB                                   Buffer size == 256KB                               
+	Uncompressed Write Time: 0.04s                     	Uncompressed Write Time: 0.02s                   	Uncompressed Write Time: 0.02s                           Uncompressed Write Time: 0.06s                    	Uncompressed Write Time: 0.02s                    	Uncompressed Write Time: 0.03s             
+	Uncompressed Write Throughput: 1684.52MB/s         	Uncompressed Write Throughput: 2561.63MB/s       	Uncompressed Write Throughput: 2561.65MB/s               Uncompressed Write Throughput: 1028.79MB/s        	Uncompressed Write Throughput: 2197.58MB/s        	Uncompressed Write Throughput: 2188.34MB/s 
+	Compression Ratio: 0.00105667                      	Compression Ratio: 0.00105667                    	Compression Ratio: 0.00105667                            Compression Ratio: 0.00105667                     	Compression Ratio: 0.00105668                     	Compression Ratio: 0.00105667              
+	Compressed Write Time: 1.44s                       	Compressed Write Time: 1.43s                     	Compressed Write Time: 1.44s                             Compressed Write Time: 0.73s                      	Compressed Write Time: 0.50s                      	Compressed Write Time: 0.39s               
+	Compressed Write Throughput: 44.44MB/s             	Compressed Write Throughput: 44.73MB/s           	Compressed Write Throughput: 44.58MB/s                   Compressed Write Throughput: 87.18MB/s            	Compressed Write Throughput: 130.18MB/s           	Compressed Write Throughput: 162.17MB/s    
+	Compression Time: 1.42611s                         	Compression Time: 1.40244s                       	Compression Time: 1.42112s                               Compression Time: 0.707126s                       	Compression Time: 0.476706s                       	Compression Time: 0.389181s                
+Buffer size == 512KB                                   Buffer size == 512KB                              Buffer size == 512KB                                            Buffer size == 512KB                                      Buffer size == 512KB                                   Buffer size == 512KB                               
+	Uncompressed Write Time: 0.02s                     	Uncompressed Write Time: 0.02s                   	Uncompressed Write Time: 0.02s                           Uncompressed Write Time: 0.05s                    	Uncompressed Write Time: 0.02s                    	Uncompressed Write Time: 0.03s             
+	Uncompressed Write Throughput: 2729.33MB/s         	Uncompressed Write Throughput: 2784.43MB/s       	Uncompressed Write Throughput: 2668.56MB/s               Uncompressed Write Throughput: 1400.71MB/s        	Uncompressed Write Throughput: 2454.54MB/s        	Uncompressed Write Throughput: 2202.73MB/s 
+	Compression Ratio: 0.0010128                       	Compression Ratio: 0.0010128                     	Compression Ratio: 0.0010128                             Compression Ratio: 0.0010128                      	Compression Ratio: 0.0010128                      	Compression Ratio: 0.0010128               
+	Compressed Write Time: 1.49s                       	Compressed Write Time: 1.45s                     	Compressed Write Time: 1.50s                             Compressed Write Time: 0.78s                      	Compressed Write Time: 0.44s                      	Compressed Write Time: 0.39s               
+	Compressed Write Throughput: 42.92MB/s             	Compressed Write Throughput: 44.23MB/s           	Compressed Write Throughput: 42.62MB/s                   Compressed Write Throughput: 82.50MB/s            	Compressed Write Throughput: 144.16MB/s           	Compressed Write Throughput: 163.66MB/s    
+	Compression Time: 1.47809s                         	Compression Time: 1.43511s                       	Compression Time: 1.4401s                                Compression Time: 0.750477s                       	Compression Time: 0.433672s                       	Compression Time: 0.387559s                
+Buffer size == 1MB                                     Buffer size == 1MB                                Buffer size == 1MB                                              Buffer size == 1MB                                        Buffer size == 1MB                                     Buffer size == 1MB                                 
+	Uncompressed Write Time: 0.02s                     	Uncompressed Write Time: 0.02s                   	Uncompressed Write Time: 0.02s                           Uncompressed Write Time: 0.05s                    	Uncompressed Write Time: 0.02s                    	Uncompressed Write Time: 0.03s             
+	Uncompressed Write Throughput: 2668.11MB/s         	Uncompressed Write Throughput: 2668.32MB/s       	Uncompressed Write Throughput: 2668.45MB/s               Uncompressed Write Throughput: 1192.52MB/s        	Uncompressed Write Throughput: 2507.34MB/s        	Uncompressed Write Throughput: 2504.11MB/s 
+	Compression Ratio: 0.000990868                     	Compression Ratio: 0.000990868                   	Compression Ratio: 0.000990868                           Compression Ratio: 0.000990868                    	Compression Ratio: 0.000990868                    	Compression Ratio: 0.000990868             
+	Compressed Write Time: 1.50s                       	Compressed Write Time: 1.48s                     	Compressed Write Time: 1.56s                             Compressed Write Time: 0.88s                      	Compressed Write Time: 0.42s                      	Compressed Write Time: 0.40s               
+	Compressed Write Throughput: 42.58MB/s             	Compressed Write Throughput: 43.30MB/s           	Compressed Write Throughput: 41.00MB/s                   Compressed Write Throughput: 72.35MB/s            	Compressed Write Throughput: 151.62MB/s           	Compressed Write Throughput: 158.34MB/s    
+	Compression Time: 1.4411s                          	Compression Time: 1.41812s                       	Compression Time: 1.50406s                               Compression Time: 0.785409s                       	Compression Time: 0.41558s                        	Compression Time: 0.401004s                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

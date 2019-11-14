@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Mbcsh5ls": {
+      "commandName": "Project",
+      "commandLineArgs": "test",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "nativeDebugging": true
+    }
+  }
+}

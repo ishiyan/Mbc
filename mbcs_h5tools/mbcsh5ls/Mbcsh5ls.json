@@ -1,0 +1,25 @@
+﻿{
+  "SortConfig": false,
+  "Logging": {
+    "IncludeScopes": false,
+    "Debug": {
+      "LogLevel": {
+        "Default": "Trace",
+        "System": "Trace",
+        "Microsoft": "Trace"
+      }
+    },
+    "Console": {
+      "LogLevel": {
+        "Default": "Warning",
+        "System": "Trace",
+        "Microsoft": "Trace"
+      }
+    },
+    "LogLevel": {
+      "Default": "Trace",
+      "System": "Trace",
+      "Microsoft": "Trace"
+    }
+  }
+}

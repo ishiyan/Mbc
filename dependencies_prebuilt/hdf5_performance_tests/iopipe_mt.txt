@@ -1,0 +1,11 @@
+I/O request size is 1000000.0MB
+                                                                                          (gcc-8.3.0 static, ubuntu 18.4 WSL)   (musl gcc-9.2.0 static Alpine 3.10.3 WSL)   (gcc-9.2.1 static, ubuntu 18.4 WSL)
+                1.9.234                    1.9.235                    1.10.5                       1.10.5                       1.10.5                                      1.10.5
+
+fill raw        0.00elapsed 8584.92MB/s    0.01elapsed 6133.30MB/s    0.01elapsed 6136.01MB/s      0.01elapsed 6041.89MB/s      0.00elapsed 6935.34MB/s                     0.01elapsed 5949.82MB/s
+fill hdf5       0.01elapsed 6135.18MB/s    0.01elapsed 6134.34MB/s    0.01elapsed 7158.48MB/s      0.01elapsed 4204.13MB/s      0.00elapsed 5148.88MB/s                     0.01elapsed 4904.10MB/s
+out raw         0.01elapsed 4770.99MB/s    0.01elapsed 5367.85MB/s    0.01elapsed 4771.50MB/s      0.01elapsed 2958.87MB/s      0.02elapsed 1893.46MB/s                     0.02elapsed 2811.75MB/s
+out hdf5        0.01elapsed 4771.50MB/s    0.01elapsed 4770.49MB/s    0.01elapsed 4293.69MB/s      0.01elapsed 2887.21MB/s      0.02elapsed 2027.28MB/s                     0.02elapsed 1871.26MB/s
+in raw          0.01elapsed 4772.13MB/s    0.01elapsed 4772.00MB/s    0.01elapsed 4294.20MB/s      0.02elapsed 2691.63MB/s      0.02elapsed 2243.32MB/s                     0.01elapsed 3183.36MB/s
+in hdf5         0.01elapsed 3898.55MB/s    0.01elapsed 4769.98MB/s    0.01elapsed 4770.99MB/s      0.01elapsed 2977.32MB/s      0.02elapsed 2051.30MB/s                     0.01elapsed 3170.24MB/s
+in hdf5 partial 0.01elapsed 2749.37MB/s    0.01elapsed 2945.91MB/s    0.01elapsed 2749.72MB/s      0.03elapsed 1629.93MB/s      0.02elapsed 1665.62MB/s                     0.03elapsed 1382.01MB/s

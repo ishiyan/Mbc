@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="mbc\time">
+      <UniqueIdentifier>{405a49de-cb64-423e-a3a3-1ef2d6e0bbde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mbc">
+      <UniqueIdentifier>{80210938-8328-46a8-ba59-a9f617b3b7c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mbc\h5">
+      <UniqueIdentifier>{80210938-8328-46a8-ba59-a9f617b3a6b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mbc\numerics">
+      <UniqueIdentifier>{186ab242-fe97-491b-aa70-6ebb1f4af150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mbc\numerics\random">
+      <UniqueIdentifier>{c267b922-3908-4c6d-a285-1f2698ab7d32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mbc\trading">
+      <UniqueIdentifier>{52b0587e-05be-4a55-b99d-8ae3640e72a2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mbc\numerics\random\mersenneTwisterSfmtTests.h">
+      <Filter>mbc\numerics\random</Filter>
+    </ClInclude>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests607.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests1279.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests2281.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests4253.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests11213.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests19937.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests44497.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests86243.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests132049.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\numerics\random\mersenneTwisterSfmtTests216091.cpp">
+      <Filter>mbc\numerics\random</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="crtDebug.cpp" />
+    <ClCompile Include="mbc_tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbc\time\dotNetTicksTests.cpp">
+      <Filter>mbc\time</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="mbc\testharnessTests.cpp" />
+    <ClCompile Include="mbc\trading\data\entitiesTests.cpp" />
+    <ClCompile Include="mbc\trading\markets\exchangeTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mbc\h5\h5Tests.Common.h">
+      <Filter>mbc\h5</Filter>
+    </ClInclude>
+    <ClCompile Include="mbc\h5\h5Tests.Common.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.Data.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.File.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.Instrument.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvPriceOnlyData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.OhlcvPriceOnlyData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.QuoteData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.QuoteData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.QuotePriceOnlyData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.QuotePriceOnlyData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.ScalarData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.ScalarData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.TradeData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.TradeData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.TradePriceOnlyData.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+    <ClCompile Include="mbc\h5\h5Tests.TradePriceOnlyData.Exploratory.cpp">
+      <Filter>mbc\h5</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+</Project>

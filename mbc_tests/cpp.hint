@@ -1,0 +1,6 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define ASSERT_EQUAL(expected, actual) th::assert.equal(expected _Comma actual _Comma LOC)
+#define TESTCASE(name) static void UNIQUE_TESTCASE(const th::test_context &);static th::registrar UNIQUE_REGISTRAR(name, group_name, th::auto_timeout, LOC, &UNIQUE_TESTCASE);static void UNIQUE_TESTCASE(const th::test_context &)
+#define TESTGROUP(name) namespace UNIQUE_TESTGROUP{ static const char* group_name{ name };}namespace UNIQUE_TESTGROUP

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mbcs": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
