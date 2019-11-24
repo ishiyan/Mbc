@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
 using System.Diagnostics;
+using Mbcsh5view;
+using Microsoft.Extensions.Logging;
 
+// ReSharper disable once CheckNamespace
 namespace DataVirtualization
 {
     /// <summary>
@@ -20,6 +23,8 @@ namespace DataVirtualization
     /// <typeparam name="T"></typeparam>
     public class VirtualizingCollection<T> : IList<DataWrapper<T>>, IList
     {
+        private readonly ILogger<VirtualizingCollection<T>> logger = App.LoggerFactory.CreateLogger<VirtualizingCollection<T>>();
+
         #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="VirtualizingCollection&lt;T&gt;"/> class.
@@ -32,6 +37,7 @@ namespace DataVirtualization
             ItemsProvider = itemsProvider;
             PageSize = pageSize;
             PageTimeout = pageTimeout;
+            logger.LogDebug($"constructed: page size = {pageSize}, page timeout = {pageTimeout}");
         }
         #endregion
 
@@ -94,7 +100,6 @@ namespace DataVirtualization
         /// Gets the item at the specified index. This property will fetch
         /// the corresponding page from the IItemsProvider if required.
         /// </summary>
-        /// <value></value>
         public DataWrapper<T> this[int index]
         {
             get
@@ -366,8 +371,8 @@ namespace DataVirtualization
 
                     if (removePage)
                     {
+                        logger.LogDebug($"Removing page {key}");
                         pages.Remove(key);
-                        Debug.WriteLine("Removed Page: " + key);
                     }
                 }
             }
@@ -386,8 +391,8 @@ namespace DataVirtualization
                 // Create a page of empty data wrappers.
                 int pageLength = Math.Min(PageSize, Count - pageIndex * PageSize);
                 var page = new DataPage<T>(pageIndex * PageSize, pageLength);
+                logger.LogDebug($"Adding page {pageIndex}");
                 pages.Add(pageIndex, page);
-                Debug.WriteLine("Added page: " + pageIndex);
                 LoadPage(pageIndex, pageLength);
             }
             else
@@ -404,7 +409,7 @@ namespace DataVirtualization
         // ReSharper disable once VirtualMemberNeverOverridden.Global
         protected virtual void PopulatePage(int pageIndex, IList<T> dataItems)
         {
-            Debug.WriteLine("Page populated: " + pageIndex);
+            logger.LogDebug($"Populating page {pageIndex}");
             if (pages.TryGetValue(pageIndex, out var page))
             {
                 page.Populate(dataItems);
@@ -437,6 +442,7 @@ namespace DataVirtualization
         /// <param name="pageLength">Number of items in the page.</param>
         protected virtual void LoadPage(int pageIndex, int pageLength)
         {
+            logger.LogDebug($"Loading page {pageIndex}, page length = {pageLength}");
             PopulatePage(pageIndex, FetchPage(pageIndex, pageLength, out var i));
             Count = i;
         }

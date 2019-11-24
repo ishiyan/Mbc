@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
 
+// ReSharper disable once CheckNamespace
 namespace DataVirtualization
 {
     public class DataWrapper<T> : INotifyPropertyChanged

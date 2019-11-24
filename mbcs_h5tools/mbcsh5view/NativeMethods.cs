@@ -3,69 +3,13 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
-using System.Windows.Media;
 
-namespace Mbhv
+namespace Mbcsh5view
 {
     internal static class NativeMethods
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        [DllImport("dwmapi.dll", PreserveSig = false)]
-        public static extern void DwmExtendFrameIntoClientArea(IntPtr hwnd, ref Dwm.Margins margins);
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        [DllImport("dwmapi.dll", PreserveSig = false)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool DwmIsCompositionEnabled();
-
         [DllImport("user32.dll")]
         public static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowComposition.WindowCompositionAttributeData data);
-    }
-
-    // ReSharper disable once UnusedMember.Global
-    internal static class Dwm
-    {
-        [StructLayout(LayoutKind.Sequential)]
-        public struct Margins
-        {
-            [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-            public Margins(Thickness t)
-            {
-                Left = (int)t.Left;
-                Right = (int)t.Right;
-                Top = (int)t.Top;
-                Bottom = (int)t.Bottom;
-            }
-
-            // ReSharper disable PrivateFieldCanBeConvertedToLocalVariable
-            private readonly int Left;
-            private readonly int Right;
-            private readonly int Top;
-            private readonly int Bottom;
-            // ReSharper restore PrivateFieldCanBeConvertedToLocalVariable
-        }
-
-        // ReSharper disable once UnusedMember.Global
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        public static bool ExtendGlassFrame(Window window, Thickness margin)
-        {
-            if (Environment.OSVersion.Version.Major < 6 || !NativeMethods.DwmIsCompositionEnabled())
-                return false;
-
-            IntPtr hwnd = new WindowInteropHelper(window).Handle;
-            if (hwnd == IntPtr.Zero)
-                throw new InvalidOperationException("The Window must be shown before extending glass.");
-
-            // Set the background to transparent from both the WPF and Win32 perspectives.
-            window.Background = Brushes.Transparent;
-            HwndSource hwndSource = HwndSource.FromHwnd(hwnd);
-            HwndTarget hwndTarget = hwndSource?.CompositionTarget;
-            if (hwndTarget != null)
-                hwndTarget.BackgroundColor = Colors.Transparent;
-            var margins = new Margins(margin);
-            NativeMethods.DwmExtendFrameIntoClientArea(hwnd, ref margins);
-            return true;
-        }
     }
 
     internal static class WindowComposition
@@ -92,6 +36,7 @@ namespace Mbhv
             // ReSharper disable InconsistentNaming
             // ReSharper disable IdentifierTypo
             // ReSharper disable UnusedMember.Local
+            // ReSharper disable UnusedMember.Global
             ACCENT_DISABLED = 0,
             ACCENT_ENABLE_GRADIENT = 1,
             ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
@@ -99,6 +44,7 @@ namespace Mbhv
             AACCENT_ENABLE_ACRYLICBLURBEHIND = 4,
             ACCENT_ENABLE_HOSTBACKDROP = 5,
             ACCENT_INVALID_STATE = 6
+            // ReSharper restore UnusedMember.Global
             // ReSharper restore UnusedMember.Local
             // ReSharper restore IdentifierTypo
             // ReSharper restore InconsistentNaming
@@ -108,6 +54,7 @@ namespace Mbhv
         internal enum AccentFlag
         {
             // ...
+            // ReSharper disable once UnusedMember.Global
             None = 0,
             DrawLeftBorder = 0x20,
             DrawTopBorder = 0x40,
@@ -135,8 +82,8 @@ namespace Mbhv
         internal static void EnableBlur(Window window, uint blurOpacity, uint blurBackgroundColor)
         {
             // 0.6 = 153, 0.7 = 179, 0.8 = 204, 0.9 = 230
-            blurOpacity = 179;
-            blurBackgroundColor = 0x000000;
+            // blurOpacity = 103;
+            // blurBackgroundColor = 0x000000;
 
             var windowHelper = new WindowInteropHelper(window);
 

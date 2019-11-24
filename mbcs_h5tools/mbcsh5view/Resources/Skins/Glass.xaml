@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Mbhv">
+                    xmlns:local="clr-namespace:Mbcsh5view">
 
         <SolidColorBrush Color="Transparent" x:Key="{x:Static SystemColors.WindowBrushKey}"/>
         <SolidColorBrush Color="Transparent" x:Key="{x:Static SystemColors.ControlBrushKey}"/>
@@ -57,7 +57,7 @@
         <Style x:Key="listItemStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Background" Value="Transparent" />
             <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=IsDataset}" Value="False">
+                <DataTrigger Binding="{Binding Path=IsDataSet}" Value="False">
                     <Setter Property="FontWeight" Value="Bold"/>
                     <Setter Property="Foreground" Value="#ffffff"/>
                 </DataTrigger>
@@ -100,7 +100,7 @@
         <Style x:Key="treeItemStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Background" Value="Transparent" />
             <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=IsDataset}" Value="False">
+                <DataTrigger Binding="{Binding Path=IsDataSet}" Value="False">
                     <Setter Property="FontWeight" Value="Bold"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Path=IsParsed}" Value="False">
@@ -178,9 +178,6 @@
 
         <Style x:Key="pushButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="VerticalAlignment" Value="Center" />
-        </Style>
-
-        <Style x:Key="traceTextBoxControlStyle" TargetType="{x:Type local:TraceTextBoxControl}">
         </Style>
 
         <Style x:Key="lightboxBorderStyle" TargetType="{x:Type Border}">

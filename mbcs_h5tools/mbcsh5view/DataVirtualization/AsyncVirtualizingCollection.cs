@@ -3,6 +3,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Threading;
 
+// ReSharper disable once CheckNamespace
 namespace DataVirtualization
 {
     /// <summary>

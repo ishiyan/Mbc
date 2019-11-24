@@ -4,7 +4,7 @@ using System.Windows.Media;
 // ReSharper disable UnusedMethodReturnValue.Global
 // Used in XAML
 
-namespace Mbhv
+namespace Mbcsh5view
 {
     public static class ColorHelper
     {
@@ -30,7 +30,6 @@ namespace Mbhv
             "MintCream", "GhostWhite", "Snow", "White"
         };
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public static IEnumerable<string> GetColorNames()
         {
             return MyColors;
@@ -39,14 +38,13 @@ namespace Mbhv
 
     public static class ColoredPenHelper
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public static IEnumerable<Pen> GetColoredPens()
         {
             var brushConverter = new BrushConverter();
-            //foreach (PropertyInfo p in typeof(Colors).GetProperties(BindingFlags.Public | BindingFlags.Static))
+            // foreach (PropertyInfo p in typeof(Colors).GetProperties(BindingFlags.Public | BindingFlags.Static))
             foreach (var p in ColorHelper.MyColors)
             {
-                //brush = (Brush)brushConverter.ConvertFromInvariantString(p.Name);
+                // brush = (Brush)brushConverter.ConvertFromInvariantString(p.Name);
                 var brush = (Brush)brushConverter.ConvertFromInvariantString(p);
 
                 var pen = new Pen(brush, 1.0) {DashStyle = DashStyles.Solid};
@@ -68,7 +66,6 @@ namespace Mbhv
 
     public static class FontStretchHelper
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public static IEnumerable<string> GetFontStretchNames()
         {
             yield return "UltraCondensed";
@@ -85,7 +82,6 @@ namespace Mbhv
 
     public static class FontStyleHelper
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public static IEnumerable<string> GetFontStyleNames()
         {
             yield return "Normal";
@@ -96,7 +92,6 @@ namespace Mbhv
 
     public static class FontWeightHelper
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public static IEnumerable<string> GetFontWeightNames()
         {
             yield return "Thin";

@@ -1,13 +1,12 @@
 ﻿using System.ComponentModel;
 
-namespace Mbhv
+namespace Mbcsh5view
 {
     public class ProgressObject : INotifyPropertyChanged
     {
         private double progressValue;
         public double ProgressValue
         {
-            // ReSharper disable once UnusedMember.Global
             get => progressValue;
             set
             {
@@ -16,8 +15,6 @@ namespace Mbhv
             }
         }
 
-        #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
     }
 }

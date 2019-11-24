@@ -104,7 +104,7 @@ wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-pr
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-### Install the .NET SDK
+### Install the .NET CORE SDK
 
 Update the products available for installation, then install the .NET SDK.
 In your terminal, run the following commands:
@@ -113,15 +113,15 @@ In your terminal, run the following commands:
 sudo add-apt-repository universe
 sudo apt-get install apt-transport-https
 sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
+sudo apt-get install dotnet-sdk-3.0
 ```
 
-If you receive an error message similar to Unable to locate package dotnet-sdk-2.2, run the following commands.
+If you receive an error message similar to `Unable to locate package dotnet-sdk-3.0`, run the following commands.
 
 ```bash
 sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
+sudo apt-get install dotnet-sdk-3.0
 ```
 
 If that doesn't work, you can run a manual install with the following commands.
@@ -136,7 +136,7 @@ sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
 sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
 sudo apt-get install -y apt-transport-https
 sudo apt-get update
-sudo apt-get install dotnet-sdk-2.2
+sudo apt-get install dotnet-sdk-3.0
 ```
 
 ### Check everything installed correctly

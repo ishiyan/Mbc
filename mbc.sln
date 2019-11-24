@@ -36,6 +36,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mbch5imp", "mbc_h5tools\mbc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mbcsh5ls", "mbcs_h5tools\mbcsh5ls\Mbcsh5ls.csproj", "{B89E3CA1-5590-498E-B2D2-952204E0404A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mbcsh5view", "mbcs_h5tools\mbcsh5view\Mbcsh5view.csproj", "{B89E3CA1-5590-498E-B2D2-952204E0404B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_md|x64 = Debug_md|x64
@@ -148,6 +150,14 @@ Global
 		{B89E3CA1-5590-498E-B2D2-952204E0404A}.Release_md|x64.Build.0 = Release_md|x64
 		{B89E3CA1-5590-498E-B2D2-952204E0404A}.Release_mt|x64.ActiveCfg = Release_md|x64
 		{B89E3CA1-5590-498E-B2D2-952204E0404A}.Release_mt|x64.Build.0 = Release_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Debug_md|x64.ActiveCfg = Debug_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Debug_md|x64.Build.0 = Debug_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Debug_mt|x64.ActiveCfg = Debug_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Debug_mt|x64.Build.0 = Debug_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Release_md|x64.ActiveCfg = Release_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Release_md|x64.Build.0 = Release_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Release_mt|x64.ActiveCfg = Release_md|x64
+		{B89E3CA1-5590-498E-B2D2-952204E0404B}.Release_mt|x64.Build.0 = Release_md|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,6 +170,7 @@ Global
 		{048D1CEC-1586-4C89-B524-DF15D9605160} = {6BDAA4AB-2758-4A96-893D-289E6CFCF640}
 		{058D1CEC-1586-4C89-B524-DF15D9605160} = {6BDAA4AB-2758-4A96-893D-289E6CFCF640}
 		{B89E3CA1-5590-498E-B2D2-952204E0404A} = {EDEA7793-EBCE-4144-8D8A-8C8266734E50}
+		{B89E3CA1-5590-498E-B2D2-952204E0404B} = {EDEA7793-EBCE-4144-8D8A-8C8266734E50}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {101E8971-4896-478E-B448-832F75DC5D09}
