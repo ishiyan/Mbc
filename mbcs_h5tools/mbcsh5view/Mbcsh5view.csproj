@@ -1,0 +1,63 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Configurations>Debug_md;Release_md</Configurations>
+    <Platforms>x64</Platforms>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <LangVersion>Latest</LangVersion>
+
+    <AssemblyName>Mbcsh5view</AssemblyName>
+    <Description>Mbrane mbcs hdf5 viewer utility</Description>
+    <Authors>Mbrane</Authors>
+    <Company>Mbrane</Company>
+    <copyright>Copyright (c) 2020 Mbrane. All rights reserved.</copyright>
+    <AssemblyVersion>1.0.1</AssemblyVersion>
+    <FileVersion>1.0.1.1</FileVersion>
+    <Version>1.0.1</Version>
+    <Product>Mbrane mbcs hdf5 tools</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_md|x64'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_md|x64'">
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(NoDependencies)'!='true'">
+    <ProjectReference Include="..\..\mbcdll\mbcdll.vcxproj">
+      <Project>{AD2A86D5-1165-40B4-A1CC-6DFEDFF2C16D}</Project>
+      <Name>mbcdll</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <OutputItemType>Content</OutputItemType>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\mbcs\Mbcs.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="bin_msvc\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.0.0"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Mbcsh5view.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!--  delete this in dotnet core 3.1  -->
+  <Target Name="WorkaroundForXAMLIntellisenseBuildIssue" AfterTargets="_CheckCompileDesignTimePrerequisite">
+    <PropertyGroup>
+      <BuildingProject>false</BuildingProject>
+    </PropertyGroup>
+  </Target>
+</Project>

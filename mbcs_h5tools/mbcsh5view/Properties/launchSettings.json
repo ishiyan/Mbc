@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mbcsh5view": {
+      "commandName": "Project",
+      "commandLineArgs": "ebf.h5"
+    }
+  }
+}

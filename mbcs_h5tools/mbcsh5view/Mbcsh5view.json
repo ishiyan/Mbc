@@ -1,0 +1,38 @@
+﻿{
+  "ContentsTreeView": true,
+  "Skin": "Far",
+  "VirtualizingCollectionPageSize": 100,
+  "VirtualizingCollectionTicksPageInMemory": 30000,
+  "Hdf5MaxReadBufferBytes": 1048576,
+  "CsvHeaderLineChecked": true,
+  "CsvTimeFormat": "yyyy/MM/dd HH:mm:ss.fffffff",
+  "CsvFileNameSeparatorAfterFileName": "_",
+  "CsvFileNamePathSeparatorChar": "-",
+  "CsvFileNamePrependFileName": true,
+  "CsvDelimiterChar": ";",
+  "GotoRememberDate": false,
+  "FontSize": 12,
+  "SortConfig": true,
+  "Logging": {
+    "IncludeScopes": false,
+    "Debug": {
+      "LogLevel": {
+        "Default": "Trace",
+        "System": "Trace",
+        "Microsoft": "Trace"
+      }
+    },
+    "Console": {
+      "LogLevel": {
+        "Default": "Trace",
+        "System": "Warning",
+        "Microsoft": "Warning"
+      }
+    },
+    "LogLevel": {
+      "Default": "Trace",
+      "System": "Trace",
+      "Microsoft": "Trace"
+    }
+  }
+}
