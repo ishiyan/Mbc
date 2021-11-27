@@ -248,7 +248,6 @@ namespace Mbcsh5view
             fileInfo = null;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private void ApplySkin(string name, ref ResourceDictionary dict)
         {
             if (null == dict)
@@ -425,7 +424,6 @@ namespace Mbcsh5view
             return 0L;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1303:Do not pass literals as localized parameters")]
         private long UpdateVisualInfo(Data data)
         {
             ulong count = (ulong)fileInfo.Length;
@@ -875,7 +873,6 @@ namespace Mbcsh5view
             GotoTo((int)i);
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes")]
         private void CsvExportProgress(string csvFileName, string timeFormat, string headerLine, DataType parsedDataType)
         {
             var arg = new CsvExportArg(progressObject, csvFileName, timeFormat, headerLine, parsedDataType);
@@ -1159,7 +1156,6 @@ namespace Mbcsh5view
             }
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
         public void WindowDragOver(object sender, DragEventArgs e)
         {
             e.Handled = true;
@@ -1331,7 +1327,7 @@ namespace Mbcsh5view
                 sb.Append(this.fileInfo.Name);
                 sb.Append(configuration.GetSection("CsvFileNameSeparatorAfterFileName").Get<char>());
             }
-            sb.Append(selectedItem.DataInfo.Path.Replace('/', configuration.GetSection("CsvFileNamePathSeparatorChar").Get<char>()).Substring(1));
+            sb.Append(selectedItem.DataInfo.Path.Replace('/', configuration.GetSection("CsvFileNamePathSeparatorChar").Get<char>())[1..]);
             sb.Append(".csv");
             csvFileTextBox.Text = sb.ToString();
             var info = new FileInfo(csvFileTextBox.Text);

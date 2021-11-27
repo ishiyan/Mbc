@@ -2524,7 +2524,7 @@ namespace mbc::trading
 
     ExchangeMic Exchange::euronextToMic(const EuronextMic euronextMic) noexcept
     {
-        switch (euronextMic)
+        switch (euronextMic)  // NOLINT(clang-diagnostic-switch-enum)
         {
         case EuronextMic::Xbru: return ExchangeMic::Xbru;
         case EuronextMic::Alxb: return ExchangeMic::Alxb;

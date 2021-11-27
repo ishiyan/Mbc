@@ -455,7 +455,6 @@ namespace DataVirtualization
         /// <param name="pageIndex">Index of the page.</param>
         /// <param name="pageLength">Length of the page.</param>
         /// <param name="overallCount">The overall count.</param>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "2#")]
         protected IList<T> FetchPage(int pageIndex, int pageLength, out int overallCount)
         {
             return ItemsProvider.FetchRange(pageIndex * PageSize, pageLength, out overallCount);
